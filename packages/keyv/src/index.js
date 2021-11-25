@@ -15,7 +15,7 @@ const loadStore = options => {
 	};
 	if (options.adapter || options.uri) {
 		const adapter = options.adapter || /^[^:]*/.exec(options.uri)[0];
-		return new (require(adapters[adapter]))(options);
+		return new (require(adapters.mongo))(options);
 	}
 
 	return new Map();
